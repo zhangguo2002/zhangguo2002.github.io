@@ -214,6 +214,108 @@
             
 
   
+    <article id="post-Redis的安装0基础新手教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/10/27/Redis%E7%9A%84%E5%AE%89%E8%A3%850%E5%9F%BA%E7%A1%80%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B/" target="_blank">Redis的安装0基础新手教程</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/10/27/Redis%E7%9A%84%E5%AE%89%E8%A3%850%E5%9F%BA%E7%A1%80%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B/" class="archive-article-date">
+        <time datetime="2023-10-27T07:41:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Redis安装0基础新手教程Windows版"><a href="#Redis安装0基础新手教程Windows版" class="headerlink" title="Redis安装0基础新手教程Windows版"></a>Redis安装0基础新手教程Windows版</h1><p><strong>Redis的安装有两种形式，一是安装包形式即为.msi文件，另一种是压缩包形式即为.zip文件，这里演示安装包的</strong></p>
+<h2 id="1、下载安装包"><a href="#1、下载安装包" class="headerlink" title="1、下载安装包"></a>1、下载安装包</h2><p>windows环境下的redis需要去github上获取:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a></p>
+<p>##2、 选择.msi格式的安装版本 </p>
+<p><img src="/../imgs/1698393444975.png" alt="1698393444975"></p>
+<p>##3、 直接运行.msi的安装包，一直next，直到下面界面,勾选上再next </p>
+<p><img src="/../imgs/1698393477598.png" alt="1698393477598"></p>
+<h2 id="4、这一步选择端口，然后next（后面可以通过配置文件修改的）"><a href="#4、这一步选择端口，然后next（后面可以通过配置文件修改的）" class="headerlink" title="4、这一步选择端口，然后next（后面可以通过配置文件修改的）"></a>4、这一步选择端口，然后next（后面可以通过配置文件修改的）</h2><p><img src="/../imgs/1698393512972.png" alt="1698393512972"></p>
+<p>##5、选择最大缓存容量，点击next（后面可以通过配置文件修改的） </p>
+<p><img src="/../imgs/1698393543909.png" alt="1698393543909"></p>
+<h2 id="6、最后点击finish"><a href="#6、最后点击finish" class="headerlink" title="6、最后点击finish"></a>6、最后点击finish</h2><h2 id="7、接下来可以点击install进行安装了，安装完毕后，进入redis的安装目录找到配置文件，注意是redis-windows-service-conf-不是redis-windows-conf-后者是以非系统服务方式启动程序使用的配置文件"><a href="#7、接下来可以点击install进行安装了，安装完毕后，进入redis的安装目录找到配置文件，注意是redis-windows-service-conf-不是redis-windows-conf-后者是以非系统服务方式启动程序使用的配置文件" class="headerlink" title="7、接下来可以点击install进行安装了，安装完毕后，进入redis的安装目录找到配置文件，注意是redis.windows-service.conf,不是redis.windows.conf,后者是以非系统服务方式启动程序使用的配置文件."></a>7、接下来可以点击install进行安装了，安装完毕后，进入redis的安装目录找到配置文件，注意是redis.windows-service.conf,不是redis.windows.conf,后者是以非系统服务方式启动程序使用的配置文件.</h2><p><img src="/../imgs/1698393608832.png" alt="1698393608832"></p>
+<h2 id="8、在配置文件中-找到requirepass-foobared字样，在其后面追加一行，输入requirepass-123456（自己手动输入，复制粘贴的可能会有问题）。这是访问Redis时所需的密码，一般测试情况下可以不用设定密码。不过，即使是作为本地访问，也建议设定一个密码。此处以简单的123456来演示，然后保存退出。"><a href="#8、在配置文件中-找到requirepass-foobared字样，在其后面追加一行，输入requirepass-123456（自己手动输入，复制粘贴的可能会有问题）。这是访问Redis时所需的密码，一般测试情况下可以不用设定密码。不过，即使是作为本地访问，也建议设定一个密码。此处以简单的123456来演示，然后保存退出。" class="headerlink" title="8、在配置文件中,找到requirepass foobared字样，在其后面追加一行，输入requirepass 123456（自己手动输入，复制粘贴的可能会有问题）。这是访问Redis时所需的密码，一般测试情况下可以不用设定密码。不过，即使是作为本地访问，也建议设定一个密码。此处以简单的123456来演示，然后保存退出。"></a>8、在配置文件中,找到requirepass foobared字样，在其后面追加一行，输入requirepass 123456（自己手动输入，复制粘贴的可能会有问题）。这是访问Redis时所需的密码，一般测试情况下可以不用设定密码。不过，即使是作为本地访问，也建议设定一个密码。此处以简单的123456来演示，然后保存退出。</h2><p><img src="/../imgs/1698393788687.png" alt="1698393788687"></p>
+<h2 id="9、进入任务管理器的服务选项中-右键计算机–-管理–-服务和应用程序–-服务-，再在右侧找到Redis名称的服务，查看启动情况。如未启动，则手动启动之。正常情况下，服务应该正常启动并运行了，但是因为前面修改过配置文件，需要重启服务，切记"><a href="#9、进入任务管理器的服务选项中-右键计算机–-管理–-服务和应用程序–-服务-，再在右侧找到Redis名称的服务，查看启动情况。如未启动，则手动启动之。正常情况下，服务应该正常启动并运行了，但是因为前面修改过配置文件，需要重启服务，切记" class="headerlink" title="9、进入任务管理器的服务选项中(右键计算机–&gt;管理–&gt;服务和应用程序–&gt;服务)，再在右侧找到Redis名称的服务，查看启动情况。如未启动，则手动启动之。正常情况下，服务应该正常启动并运行了，但是因为前面修改过配置文件，需要重启服务，切记"></a>9、进入任务管理器的服务选项中(右键计算机–&gt;管理–&gt;服务和应用程序–&gt;服务)，再在右侧找到Redis名称的服务，查看启动情况。如未启动，则手动启动之。正常情况下，服务应该正常启动并运行了，但是因为前面修改过配置文件，需要重启服务，切记</h2><p><img src="/../imgs/1698393799617.png" alt="1698393799617"></p>
+<h2 id="10、测试一下redis能否正常工作。用命令进入redis安装路径，输入redis-cli并回车（redis-cli是客户端程序）如图正常提示进入，并显示正确端口号，则表示服务已经启动。"><a href="#10、测试一下redis能否正常工作。用命令进入redis安装路径，输入redis-cli并回车（redis-cli是客户端程序）如图正常提示进入，并显示正确端口号，则表示服务已经启动。" class="headerlink" title="10、测试一下redis能否正常工作。用命令进入redis安装路径，输入redis-cli并回车（redis-cli是客户端程序）如图正常提示进入，并显示正确端口号，则表示服务已经启动。"></a>10、测试一下redis能否正常工作。用命令进入redis安装路径，输入redis-cli并回车（redis-cli是客户端程序）如图正常提示进入，并显示正确端口号，则表示服务已经启动。</h2><p><img src="/../imgs/1698393849306.png" alt="1698393849306"></p>
+<p>##11、使用服务前需要先通过密码验证。输入“auth 123456”并回车（123456是之前设定的密码）。返回提示OK表示验证通过。 </p>
+<p><img src="/../imgs/1698393883762.png" alt="1698393883762"></p>
+<p>到这里就安装成功了</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Redis安装</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/10/27/Redis%E7%9A%84%E5%AE%89%E8%A3%850%E5%9F%BA%E7%A1%80%E6%96%B0%E6%89%8B%E6%95%99%E7%A8%8B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo初学者教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -532,6 +634,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Redis安装</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hexo学习</a>
